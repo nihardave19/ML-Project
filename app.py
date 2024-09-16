@@ -25,7 +25,7 @@ def predict():
     prediction = model.predict(final_features)
 
     if prediction[0] == 0:
-        output ="Not a Fraud Transcation"
+        output ="Not a Fraud Transaction"
     elif prediction[0] == 1:
         output ="Fraud Transaction"
 
