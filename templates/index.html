@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Payment Fraud Model</title>
+    <title>Online Payment Fraud Detection</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +27,6 @@
             background-color: #4CAF50;
             color: white;
             border: none;
-            cursor: pointer;
         }
         .form-container input[type="submit"]:hover {
             background-color: #45a049;
@@ -44,14 +41,23 @@
 </head>
 <body>
     <div class="form-container">
-        <h2>Customer Classification Model</h2>
+        <h2>Online Payment Fraud Detection</h2>
         <form action="/predict" method="post">
-            <label for="Annual_Income">Annual Income (in $K):</label>
-            <input type="number" name="Annual_Income" id="Annual_Income" required>
-
-            <label for="Spending_Score">Spending Score (1-100):</label>
-            <input type="number" name="Spending_Score" id="Spending_Score" required>
-
+            <label for="Step">Step:</label>
+            <input type="number" name="Step" required>
+            
+            <label for="Type">Type:</label>
+            <input type="number" step="0.01" name="Type" required>
+            
+            <label for="Amount">Amount:</label>
+            <input type="number" name="Amount" required>
+            
+            <label for="Sender Old Balance">Sender Old Balance:</label>
+            <input type="number" name="Sender Old Balance" required>
+            
+            <label for="Recipient Old Balance">Recipient Old Balance:</label>
+            <input type="number" step="0.01" name="Recipient Old Balance" required>
+            
             <input type="submit" value="Predict">
         </form>
         {% if prediction_text %}

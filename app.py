@@ -25,9 +25,9 @@ def predict():
     prediction = model.predict(final_features)
 
     if prediction[0] == 0:
-        output ="It is not fraud"
+        output ="Not a Fraud Transcation"
     elif prediction[0] == 1:
-        output ="It is Fraud"
+        output ="Fraud Transaction"
 
 
     return render_template('index.html', prediction_text='Prediction: {}'.format(output))
